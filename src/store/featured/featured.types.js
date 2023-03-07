@@ -1,0 +1,3 @@
+export const FEATURED_ACTION_TYPES = {
+    SET_FEATURED_ITEMS: 'featured/SET_FEATURED_ITEMS',
+}   
