@@ -31,7 +31,7 @@ const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
 
 export const store = createStore (
   persistedReducer,
-  undefined,
+  // undefined,
   composedEnhancers);
 
 export const persistor = persistStore(store);

@@ -1,12 +1,6 @@
-/**
-    state:      {categories: {…}, cart: {…}, featured: {...} }
-    state.featured:     {featuredItems: Array(1)}
-    state.cart.cartItems:    [{ id: 2, quantity: 1, ...}, {...}]
- */
-
 export const selectFeatured = (state) => {
-    return state.featured
+    return state.featuredReducer
 }
 export const selectFeaturedItems = (state) => {
-    return state.featured.featuredItems
+    return state.featuredReducer.featuredItems
 }

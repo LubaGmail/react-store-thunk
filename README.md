@@ -13,15 +13,14 @@ Steps to merging branch into master
     $ git merge feature/featured-products
         Merge made by the 'recursive' strategy
 
-featured
-    featured-list
-        call firebase getFeatured
-        useEffect   getData     
-        store: dispatch GET_FEATURED
-    featured-item
-        buttons:    addToCart
-        store:  SET_FEATURED
-    add styles
+featured thunk
+    home dispatch   async func
+    featured-list   useSelector  
+        types: start, success, failed
+        action: async func
+        reducer: start, success, failed
+
+
 
 
 
