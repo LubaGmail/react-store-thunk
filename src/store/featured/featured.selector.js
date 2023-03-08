@@ -1,6 +1,6 @@
 export const selectFeatured = (state) => {
-    return state.featuredReducer
+    return state.featured
 }
 export const selectFeaturedItems = (state) => {
-    return state.featuredReducer.featuredItems
+    return state.featured.featuredItems
 }

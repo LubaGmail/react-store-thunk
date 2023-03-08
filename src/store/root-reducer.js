@@ -8,5 +8,5 @@ import { featuredReducer } from './featured/featured.reducer';
 export const rootReducer = combineReducers({
   categories: categoriesReducer,
   cart: cartReducer,
-  featuredReducer: featuredReducer
+  featured: featuredReducer
 });

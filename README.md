@@ -19,6 +19,7 @@ featured thunk
         types: start, success, failed
         action: async func
         reducer: start, success, failed
+        selector: featuredItems
 
 
 

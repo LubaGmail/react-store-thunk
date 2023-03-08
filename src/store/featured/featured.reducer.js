@@ -11,7 +11,6 @@ export const featuredReducer = (state = INITIAL_FEATURED_STATE, action = {}) => 
 
     switch (type) {
         case FEATURED_ACTION_TYPES.FETCH_FEATURED_START:
-            console.log('s', state)
             return {
               ...state,
               isLoading: true,
