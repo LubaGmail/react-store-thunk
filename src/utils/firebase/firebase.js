@@ -59,6 +59,7 @@ export const addCollection = async (collectionKey, objectsToAdd) => {
 export const getFeatured = async () => {
     const collectionRef = collection(db, 'categories');
     const q = query(collectionRef);
+    
     const querySnapshot = await getDocs(q);
     const docs = querySnapshot.docs.map((doc) => doc.data());
     const featured = []
@@ -70,7 +71,7 @@ export const getFeatured = async () => {
             }
         }
     }
-    
+    // throw new Error('Failed to retrieve featured products from the database!');
     return featured;
 }
 

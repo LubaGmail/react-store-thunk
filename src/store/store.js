@@ -14,12 +14,12 @@ const middleWares = [process.env.NODE_ENV !== 'production' && logger, thunk].fil
 const composeEnhancer =   (process.env.NODE_ENV !== 'production' &&
     window &&
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ||
-  compose;
+    compose;
     
   const persistConfig = {
     key: 'root',
-    storage,
-    blacklist: [],
+    storage: storage,
+    whitelist: ['cart'],
   };
   
 const persistedReducer = persistReducer(persistConfig, rootReducer);
@@ -31,11 +31,10 @@ const composedEnhancers = composeEnhancer(applyMiddleware(...middleWares));
 
 export const store = createStore (
   persistedReducer,
-  // undefined,
-  composedEnhancers);
+  undefined,
+  composedEnhancers
+);
 
 export const persistor = persistStore(store);
 
 // export const store = createStore(rootReducer);
-
-

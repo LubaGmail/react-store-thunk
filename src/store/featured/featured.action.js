@@ -3,7 +3,6 @@ import { getFeatured } from "../../utils/firebase/firebase";
 
 export const fetchFeaturedStartAsync = () => {
     return async (dispatch) => {
-       
         dispatch({
             type: FEATURED_ACTION_TYPES.FETCH_FEATURED_START,
             isLoading: true
@@ -15,6 +14,7 @@ export const fetchFeaturedStartAsync = () => {
                 payload: featured
             })
         } catch (error) {
+            alert(error.toString())
             dispatch({
                 type: FEATURED_ACTION_TYPES.FETCH_FEATURED_FAILED,
                 payload: error
