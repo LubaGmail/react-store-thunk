@@ -20,6 +20,7 @@ const composeEnhancer =   (process.env.NODE_ENV !== 'production' &&
     key: 'root',
     storage: storage,
     whitelist: ['cart'],
+    blacklist: ['categories']
   };
   
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -19,6 +19,14 @@ featured thunked
     FeaturedList
         featured  = useSelector(selectFeaturedItems)    featured.selector
 
+categories thunked
+    Shop
+        dispatch(fetchCategoriesAsync())                categories.action
+    CategoriesPreview
+        selectCategories                                categories.selector
+        selectIsLoading     
+    
+
 
 
 
