@@ -2,7 +2,8 @@ import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
 import Product from '../../components/product/product';
-import { selectCategories } from '../../store/categories/categories.selector'
+import Spinner from '../../components/spinner/spinner'
+import { selectCategories, selectIsLoading } from '../../store/categories/categories.selector'
 
 import {
     CategoryPreviewContainer,
@@ -12,6 +13,8 @@ import {
 
 const CategoriesPreview = () => {
     const categoriesMap = useSelector(selectCategories);
+    const isLoading = useSelector(selectIsLoading)
+
     // let hatArr = categoriesMap['hats']
     // {hats: Array(9), jackets: Array(5), mens: Array(6), ... }
 
@@ -23,15 +26,27 @@ const CategoriesPreview = () => {
                         <Link to={`/shop/${title}`}>
                             <Title>{title.toUpperCase()}</Title>
                         </Link>
-                        <Preview>
-                            {
-                                categoriesMap[title].map((p, i) => (
-                                    <span key={i}>
-                                        {i < 4 && <Product product={p} />}
-                                    </span>
-                                ))
-                            }
-                        </Preview>
+
+                        {
+                            isLoading ? (
+                                <>
+                                    <Spinner /> 
+                                    'ABC'
+                                </>
+                               
+                            ): (
+                                <Preview>
+                                    {
+                                        categoriesMap[title].map((p, i) => (
+                                            <span key={i}>
+                                                {i < 4 && <Product product={p} />}
+                                            </span>
+                                        ))
+                                    }
+                                </Preview>    
+                            )
+                        }
+
                     </CategoryPreviewContainer>
                 ) )
             }   

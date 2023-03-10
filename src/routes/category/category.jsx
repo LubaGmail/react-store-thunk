@@ -27,7 +27,6 @@ const Category = () => {
         <>
             <CategoryContainer>
                 <Title>{category.toUpperCase()}</Title>
-                {/* <h3>isLoading: {JSON.stringify(isLoading)}</h3> */}
 
                 {
                     isLoading ? (

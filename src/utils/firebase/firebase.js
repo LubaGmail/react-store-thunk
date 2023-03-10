@@ -80,6 +80,8 @@ export const getCategories = async () => {
     const q = query(collectionRef);
     const querySnapshot = await getDocs(q);
     // [ {items: [{id, name, price, imageUrl}], title: 'hats'} ]
+
+    // throw new Error('Error getting categories')
     return querySnapshot.docs.map((doc) => doc.data());
 }
 
