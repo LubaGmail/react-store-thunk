@@ -31,7 +31,6 @@ const CategoriesPreview = () => {
                             isLoading ? (
                                 <>
                                     <Spinner /> 
-                                    'ABC'
                                 </>
                                
                             ): (
