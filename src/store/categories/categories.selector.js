@@ -13,3 +13,6 @@ export const selectCategories = (state) => {
     );
     return categoriesMap;
 }
+export const selectIsLoading = (state) => {
+  return state.categories.isLoading
+}
